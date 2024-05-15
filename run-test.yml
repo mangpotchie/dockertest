@@ -1,0 +1,15 @@
+name: Run Test Suite
+on: push
+
+jobs:
+run-test:
+  name: run
+  runs-on:ubuntu-latest
+  container:
+  image:composer:latest
+  volumes:
+  -my-app:/app
+
+  steps:
+  -name: Running composer install
+  run: composer install
